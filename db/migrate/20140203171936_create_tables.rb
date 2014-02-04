@@ -1,7 +1,8 @@
 class CreateTables < ActiveRecord::Migration
   def change
     create_table :players do |t|
-      t.string :name
+      t.string :name, :unique => true, :null => false
+      t.timestamps
     end
 
     create_table :games do |t|

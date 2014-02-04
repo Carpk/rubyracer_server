@@ -16,6 +16,9 @@ $(document).ready(function() {
       if (pos1 >= 40) {
         p1wins ++;
         alert("Player 1 wins!!!  Player 1 has won " + p1wins + " times.");
+
+        $.post( "/win", {winner: 'player1'} )
+
         pos1 = 1;
         pos2 = 1;
         $("td").removeClass("active");
@@ -30,6 +33,9 @@ $(document).ready(function() {
       if (pos2 >= 40) {
         p2wins ++;
         alert("Player 2 wins!!! Player 2 has won " + p2wins + " times.");
+
+        $.post( "/win", {winner: 'player2'} )
+
         pos1 = 1;
         pos2 = 1;
         $("td").removeClass("active");
